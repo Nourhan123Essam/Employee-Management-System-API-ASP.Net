@@ -35,9 +35,8 @@ The frontend for this project is built in **Angular** with responsive UI using *
   - **Employee**
   - **Client**
   - **Project**
-- Robust entity relationships for real-world employee management:
-  - Automatic cascading deletions (e.g., deleting a client removes all related projects).
-- Authentication with **Local Storage** and **Guards** to prevent unauthorized access in the frontend.
+- Clear relationships between entities to reflect a real-world employee management structure.
+- When delete Client, we delete all the projects related to that client as each project relate to one client.
 
 ---
 
