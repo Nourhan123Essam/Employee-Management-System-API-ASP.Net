@@ -1,61 +1,62 @@
-# Employee Management System API
+# Employee Management System - Backend
 
-This is the backend API for the Employee Management System. It is built using ASP.NET Core and provides CRUD operations for managing employees, roles, designations, clients, and projects. The API supports secure login and logout functionality using local storage and guards unauthorized access to endpoints.
+## 🚀 Overview
 
----
+The **Employee Management System Backend** is built using **ASP.NET Core API** and handles core data and business logic for managing employees, roles, designations, clients, and projects. This API enables seamless CRUD operations with real-world relational mappings.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [How to Run the Project](#how-to-run-the-project)
-  - [Prerequisites](#prerequisites)
-  - [Steps to Run the Project](#steps-to-run-the-project)
-- [Database Schema](#database-schema)
-- [API Endpoints](#api-endpoints)
-- [License](#license)
-
----
-## 🔗 **Related Repository**
-
-This backend works with the frontend project, built in **Angular**. Find it [here](https://github.com/Nourhan123Essam/Employee-Management-System-Angular).
----
-
-## Features
-- CRUD operations for `Role`, `Designation`, `Employee`, `Client`, and `Project` entities.
-- Relationships between entities:
-  - Each project has a lead employee and a related client.
-  - Each employee has a role and designation.
-  - Employees can work on multiple projects, but only one employee is the lead for a project.
-- Authentication using local storage.
-- Guards implemented to prevent unauthorized access to endpoints.
-- AutoMapper used for mapping between models and DTOs.
+### Key Entity Relationships:
+- Each **Project** is led by an **Employee** and assigned to a **Client**.
+- Each **Employee** has a specific **Designation** and **Role**.
+- An **Employee** can work on multiple **Projects**, but only one **Lead Employee** exists per project.
+- Deleting a **Client** automatically removes all related **Projects**.
 
 ---
 
-## Technologies Used
-- **Backend**: ASP.NET Core 6, AutoMapper
-- **Database**: SQL Server
-- **Tools**: Entity Framework Core, Swagger
-- **Authentication**: Local storage for login/logout
+## 🔗 Related Repository
+
+The frontend for this project is built in **Angular** with responsive UI using **Bootstrap**. Check it out [here](https://github.com/Nourhan123Essam/Employee-Management-System-Angular).
 
 ---
 
-## 🗃️ **Database Schema**
+## 🛠️ Tech Stack
 
-Here is the schema for the database showing the relationships between entities:  
-
-![Database Schema](Employee-System-Backend/Project Screens/Database Diagram.png)  
+- **Framework**: ASP.NET Core API  
+- **Database**: SQL Server  
+- **ORM**: Entity Framework Core  
+- **Mapping Tool**: AutoMapper  
 
 ---
 
-## 📖 **Endpoints**
+## 🌟 Features
 
-Below is a Screenshots of the endpoints exposed by this API.  
-1- (Employee-System-Backend/Project Screens/Swagger Ui 1.png)
-2- (Employee-System-Backend/Project Screens/Swagger Ui 2.png)
-3- (Employee-System-Backend/Project Screens/Swagger Ui 3.png)
-4- (Employee-System-Backend/Project Screens/Swagger Ui 4.png)
+- **CRUD operations** for five key entities:
+  - **Role**
+  - **Designation**
+  - **Employee**
+  - **Client**
+  - **Project**
+- Robust entity relationships for real-world employee management:
+  - Automatic cascading deletions (e.g., deleting a client removes all related projects).
+- Authentication with **Local Storage** and **Guards** to prevent unauthorized access in the frontend.
 
+---
+
+## 🗃️ Database Schema
+
+Below is a diagram of the database schema, showing entity relationships:
+
+![Database Schema](Employee-System-Backend/Project%20Screens/Database%20Diagram.png)  
+
+---
+
+## 📖 API Endpoints
+
+Screenshots of the exposed API endpoints via Swagger UI:  
+
+![Swagger UI 1](Employee-System-Backend/Project%20Screens/Swagger%20Ui%201.png)  
+![Swagger UI 2](Employee-System-Backend/Project%20Screens/Swagger%20Ui%202.png)  
+![Swagger UI 3](Employee-System-Backend/Project%20Screens/Swagger%20Ui%203.png)  
+![Swagger UI 4](Employee-System-Backend/Project%20Screens/Swagger%20Ui%204.png)  
 
 ---
 
