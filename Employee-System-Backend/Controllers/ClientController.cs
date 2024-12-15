@@ -68,7 +68,13 @@ namespace Employee_System_Backend.Controllers
         {
             var client = dbContext.Clients.Find(id);
             if (client is null) return NotFound();
-
+            
+            var projects  = dbContext.Projects.Where(p => p.ClientId == id).ToList();
+            //delete all the projects related to that client
+            dbContext.Projects.RemoveRange(projects);
+            dbContext.SaveChanges();
+            
+            //now I can delete the client safely
             dbContext.Clients.Remove(client);
             dbContext.SaveChanges();
             return Ok(new { messages = "Client Deleted Successfully!" });
