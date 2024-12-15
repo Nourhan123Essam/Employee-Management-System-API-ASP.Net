@@ -1,44 +1,42 @@
-# Employee Management System - Backend
+# Employee Management System API
 
-## 🚀 **Overview**
+This is the backend API for the Employee Management System. It is built using ASP.NET Core and provides CRUD operations for managing employees, roles, designations, clients, and projects. The API supports secure login and logout functionality using local storage and guards unauthorized access to endpoints.
 
-This is the **backend** for the Employee Management System. It is built with **ASP.NET API** and manages the application's core data and business logic. 
-The backend exposes endpoints to handle CRUD operations for the following entities:
-- **Role**
-- **Designation**
-- **Employee**
-- **Client**
-- **Project**
+---
 
-The entities are relationally mapped to allow effective management:
-- Each **Project** has a lead (**Employee**) and is assigned to a **Client**.
-- Each **Employee** is assigned a **Designation** and a **Role**.
-- An **Employee** can work on one or more projects, but only one **lead** exists per project.
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [How to Run the Project](#how-to-run-the-project)
+  - [Prerequisites](#prerequisites)
+  - [Steps to Run the Project](#steps-to-run-the-project)
+- [Database Schema](#database-schema)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
 
+---
 ## 🔗 **Related Repository**
 
 This backend works with the frontend project, built in **Angular**. Find it [here](https://github.com/Nourhan123Essam/Employee-Management-System-Angular).
+---
+
+## Features
+- CRUD operations for `Role`, `Designation`, `Employee`, `Client`, and `Project` entities.
+- Relationships between entities:
+  - Each project has a lead employee and a related client.
+  - Each employee has a role and designation.
+  - Employees can work on multiple projects, but only one employee is the lead for a project.
+- Authentication using local storage.
+- Guards implemented to prevent unauthorized access to endpoints.
+- AutoMapper used for mapping between models and DTOs.
 
 ---
 
-## 🛠️ **Tech Stack**
-
-- **Framework**: ASP.NET Core API  
-- **Database**: SQL Server  
-- **ORM**: Entity Framework Core  
-- **Mapping**: AutoMapper  
-
----
-
-## 🌟 **Features**
-
-- CRUD operations for the following entities:
-  - **Role**  
-  - **Designation**  
-  - **Employee**  
-  - **Client**  
-  - **Project**  
-- Clear relationships between entities to reflect a real-world employee management structure.
+## Technologies Used
+- **Backend**: ASP.NET Core 6, AutoMapper
+- **Database**: SQL Server
+- **Tools**: Entity Framework Core, Swagger
+- **Authentication**: Local storage for login/logout
 
 ---
 
@@ -46,37 +44,58 @@ This backend works with the frontend project, built in **Angular**. Find it [her
 
 Here is the schema for the database showing the relationships between entities:  
 
-![Database Schema](schema-screenshot.png)  
+![Database Schema](Employee-System-Backend/Project Screens/Database Diagram.png)  
 
 ---
 
 ## 📖 **Endpoints**
 
-Below is a sample of the key endpoints exposed by this API.  
+Below is a Screenshots of the endpoints exposed by this API.  
+1- (Employee-System-Backend/Project Screens/Swagger Ui 1.png)
+2- (Employee-System-Backend/Project Screens/Swagger Ui 2.png)
+3- (Employee-System-Backend/Project Screens/Swagger Ui 3.png)
+4- (Employee-System-Backend/Project Screens/Swagger Ui 4.png)
 
-| HTTP Method | Endpoint                | Description               |
-|-------------|-------------------------|---------------------------|
-| `POST`      | `/api/auth/login`       | Logs in the user.         |
-| `POST`      | `/api/auth/logout`      | Logs out the user.        |
-| `GET`       | `/api/employees`        | Retrieves all employees.  |
-| `POST`      | `/api/employees`        | Creates a new employee.   |
-| `PUT`       | `/api/employees/{id}`   | Updates an employee.      |
-| `DELETE`    | `/api/employees/{id}`   | Deletes an employee.      |
 
-For a complete list of endpoints, refer to the **Postman collection** or Swagger UI documentation.
+---
+
+## How to Run the Project
+
+### Prerequisites
+Ensure you have the following installed:
+- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
+- SQL Server
+- Visual Studio or any preferred IDE
+- Postman or similar API testing tools (optional)
 
 ---
 
 ## 💡 **How to Run**
 
-### Prerequisites:
-- Install **.NET 6 SDK**.  
-- Install **SQL Server**.  
-
 ### Steps:
 1. Clone the repository:  
-   ```bash
-   git clone https://github.com/Nourhan123Essam/Employee-Management-System-API-ASP.Net.git
-   ```
-2. Update the appsettings.json with your SQL Server connection string.
-3. 
+   
+    ```bash
+     git clone https://github.com/Nourhan123Essam/Employee-Management-System-API-ASP.Net.git
+
+2. Update the appsettings.json with your SQL Server connection string in this format:
+  in the appsetting.json put your database name, and server name in the DefaultConnection:
+    
+    ```appsetting.json
+    "ConnectionStrings": {
+    "DefaultConnection": "Server=your-server-name;Database=your-database-name;Trusted_Connection=True;TrustServerCertificate=True"
+    }
+3.Apply Migrations
+ - Open the terminal and navigate to the project folder where the .csproj file is located.
+ - Run the following command to create the database and apply migrations:
+    ```bash
+      dotnet ef database update
+  
+4. Open the the folder using Visual Studio then run the project
+
+###📬 Let's Connect
+- [LinkedIn](https://www.linkedin.com/in/nourhan-essam123/)  
+- [LeetCode](https://leetcode.com/u/norhan123/)  
+- [GitHub](https://github.com/Nourhan123Essam)
+- [Gmail](nourhan.essam.makhlouf@gmail.com)
+---
