@@ -29,14 +29,18 @@ The frontend for this project is built in **Angular** with responsive UI using *
 
 ## 🌟 Features
 
-- **CRUD operations** for five key entities:
+- **CRUD Operations**: Implemented for five key entities:
   - **Role**
   - **Designation**
   - **Employee**
   - **Client**
   - **Project**
-- Clear relationships between entities to reflect a real-world employee management structure.
-- When delete Client, we delete all the projects related to that client as each project relate to one client.
+
+- **Entity Relationships**: Models real-world scenarios, such as:
+  - Each **Project** is associated with one **Client**.
+  - Deleting a **Client** automatically deletes all related **Projects** (Cascade Delete).
+
+- **Fluent API**: Utilized to define entity relationships clearly and ensure data integrity.
 
 ---
 
